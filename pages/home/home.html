@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h2>BMI Calculator App</h2>
+  <p>
+    There's no "perfect weight" that fits everyone. BMI, or body mass index,
+    measures how healthy your weight is based on how tall you are. It gives you
+    a clue to your risk for weight-related health problems.
+    <br />
+    Source: <a href="https://www.webmd.com">https://www.webmd.com</a>
+  </p>
+
+  <ion-item>
+    <ion-label>Height in Meter</ion-label>
+    <ion-input type="number" [(ngModel)]="height"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Weight in kilogram</ion-label>
+    <ion-input type="number" [(ngModel)]="weight"></ion-input>
+  </ion-item>
+  <br />
+
+  <button ion-button icon-start>
+    <ion-icon name="home"></ion-icon>
+    Calculate
+  </button>
+
+  <ion-card *ngIf="bmi">
+    <ion-card-header>
+      BMI Result
+    </ion-card-header>
+    <ion-card-content>
+      Your BMI is: {{bmi}} and you are {{message}}
+    </ion-card-content>
+  </ion-card>
+</ion-content>
